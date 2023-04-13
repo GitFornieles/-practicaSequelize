@@ -26,3 +26,23 @@ Recuperar la lista de todos los cursos que detalle todos los alumnos inscriptos
 Recuperar para un curso particular la lista de alumnos inscriptos
 Recuperar una lista que liste los cursos con la cantidad de alumnos en cada uno.
 Nota: Cada docente puede dictar clases en un sólo curso, cada curso es dictado por un solo docente
+
+La info guardada de alumnos es:
+-id
+-nombre
+-apellido
+-edad
+
+La info guardada de docentes es:
+-id
+-nombre
+-apellido
+-profesion
+
+La info guardada de cursos es:
+-id
+-materia
+-id docente
+-id alumnos
+
+Presten atención qué columnas deben generar uds y cuáles se generan automáticamnte cuando declaran las relaciones en Sequelize

@@ -1,0 +1,29 @@
+{
+  "name": "practicasequelize",
+  "version": "1.0.0",
+  "description": "EJERCICIO DE REPASO\r Node - Express - Sequelize",
+  "main": "prueba.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/GitFornieles/-practicaSequelize.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GitFornieles/-practicaSequelize/issues"
+  },
+  "homepage": "https://github.com/GitFornieles/-practicaSequelize#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.31.0"
+  }
+}
