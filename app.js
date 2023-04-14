@@ -11,6 +11,6 @@ app.use("/api",router)
 
 app.use("/",(req,res)=>{res.send("BLABLABLA")})
 
-db.sync({force:true})
+db.sync({})
 .then(()=>app.listen(3000, () => console.log("Servidor escuchando en el puerto 3000")))
 .catch((err)=>console.log(err))

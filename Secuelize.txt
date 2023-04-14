@@ -29,9 +29,9 @@ Agregar 5 cursos
 Vincular docentes y cursos
 Vincular alumnos y cursos
 
-Recuperar lista completa de alumnos en el sistema
-Recuperar lista completa de docentes en el sistema
-Recuperar lista completa de cursos en el sistema
+Recuperar lista completa de alumnos en el sistema ok
+Recuperar lista completa de docentes en el sistema ok
+Recuperar lista completa de cursos en el sistema ok
 Recuperar la lista de todos los cursos que detalle todos los alumnos inscriptos
 Recuperar para un curso particular la lista de alumnos inscriptos
 Recuperar una lista que liste los cursos con la cantidad de alumnos en cada uno.
@@ -55,6 +55,6 @@ La info guardada de cursos es:
 -id
 -materia
 -id docente
--id alumnos
+
 
 Presten atención qué columnas deben generar uds y cuáles se generan automáticamnte cuando declaran las relaciones en Sequelize

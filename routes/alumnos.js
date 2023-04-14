@@ -5,7 +5,7 @@ const Curso=require("../models/Curso")
 
 
 routerAlumnos.get("/",(req,res)=>{
-    res.send("Llegaste a Alumnos")
+    Alumno.findAll().then(result=>res.send(result)).catch(err=>console.log(err))
 })
 
 routerAlumnos.post("/new",(req,res)=>{

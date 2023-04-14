@@ -4,7 +4,9 @@ const Docente = require("../models/Docente");
 const Curso = require("../models/Curso");
 
 routerDocentes.get("/", (req, res) => {
-  res.send("Llegaste a Docentes");
+  Docente.findAll({ include: { model: Curso, as: "materia" } })
+    .then((result) => res.send(result))
+    .catch((err) => console.log(err));
 });
 
 routerDocentes.post("/new", (req, res) => {
@@ -28,21 +30,6 @@ routerDocentes.put("/vincular/:docente/:curso", (req, res) => {
 });
 
 module.exports = routerDocentes;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Vincular docente-curso con async await
 // const docenteElegido=await Docente.findByPk(idDocente)
