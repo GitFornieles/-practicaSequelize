@@ -1,10 +1,8 @@
 const express = require("express");
 const routerCursos = express.Router();
 const sequelize = require("sequelize");
-const Curso = require("../models/Curso");
-const Docente = require("../models/Docente");
-const { alumnosCursos } = require("../models");
-const Alumno=require("../models/Alumno")
+const { alumnosCursos,Curso,Docente,Alumno } = require("../models");
+
 
 routerCursos.get("/", (req, res) => {
   Curso.findAll({ include: { model: Docente, as: "docente" } })
@@ -14,7 +12,7 @@ routerCursos.get("/", (req, res) => {
 
 routerCursos.get("/poblacionCursos", (req, res) => {
   alumnosCursos
-    .findAll({include:{model:Curso}})
+    .findAll({include:[{model:Curso},{model:Alumno}]})
     .then((result) => res.send(result))
     .catch((err) => console.log(err));
 });

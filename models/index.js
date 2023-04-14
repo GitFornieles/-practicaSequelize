@@ -17,7 +17,14 @@ const alumnosCursos=db.define("alumnosCursos",{
     }
 })
 Alumno.belongsToMany(Curso,{through:"alumnosCursos"}) 
-Curso.belongsToMany(Alumno,{through:"alumnosCursos"}) 
+Curso.belongsToMany(Alumno,{through:"alumnosCursos"})
+
+Alumno.hasMany(alumnosCursos);
+alumnosCursos.belongsTo(Alumno);
+Curso.hasMany(alumnosCursos);
+alumnosCursos.belongsTo(Curso);
+
+
 // const alumnosCursos = db.models.alumnosCursos
 
 
