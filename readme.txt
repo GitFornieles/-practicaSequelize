@@ -19,13 +19,25 @@ Crear las rutas que permitan:
 Crear usuario/curso/docente
 Modificar usuario/curso/docente
 Eliminar usuario/curso/docente
+Vincular alumno/curso
+Vincular docente/curso
+
+
+Agregar 10 alumnos
+Agregar 5 docentes
+Agregar 5 cursos
+Vincular docentes y cursos
+Vincular alumnos y cursos
+
 Recuperar lista completa de alumnos en el sistema
 Recuperar lista completa de docentes en el sistema
 Recuperar lista completa de cursos en el sistema
 Recuperar la lista de todos los cursos que detalle todos los alumnos inscriptos
 Recuperar para un curso particular la lista de alumnos inscriptos
 Recuperar una lista que liste los cursos con la cantidad de alumnos en cada uno.
+
 Nota: Cada docente puede dictar clases en un sólo curso, cada curso es dictado por un solo docente
+Cada alumno puede cursar varios cursos
 
 La info guardada de alumnos es:
 -id

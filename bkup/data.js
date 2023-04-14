@@ -1,32 +1,42 @@
-[
-    '{{repeat(100)}}',
-    {
-      edad: '{{integer(20, 40)}}',
-      nombre: '{{firstName()}}',
-      apellido:' {{surname()}}'
-    }
-  ]
+// [
+//     '{{repeat(100)}}',
+//     {
+//       edad: '{{integer(20, 40)}}',
+//       nombre: '{{firstName()}}',
+//       apellido:' {{surname()}}'
+//     }
+//   ]
+//   [
+//     '{{repeat(10)}}',
+//     {
+//       profesion: '{{random("Salesman","Electrician","Producer","Mechanic","Astronomer","Journalist","Jeweller","Fashion Designer","Meteorologist","Historian")}}',
+//       nombre: '{{firstName()}}',
+//       apellido:' {{surname()}}'
+//     }
+//   ]
+//   [
+//     '{{repeat(10)}}',
+//     {
+//       materia: '{{random("Matemática","Geografía","Programación","Química","Literatura","Historia","Física","Ed. Física","Música","Recreo")}}'
+//     }
+//   ]
+/////////
 
 
+//Llamamos a los
 
-  [
-    '{{repeat(10)}}',
-    {
-      profesion: '{{random("Salesman","Electrician","Producer","Mechanic","Astronomer","Journalist","Jeweller","Fashion Designer","Meteorologist","Historian")}}',
-      nombre: '{{firstName()}}',
-      apellido:' {{surname()}}'
-    }
-  ]
+const axios=require("axios")
+axios.defaults.baseURL="http://localhost:3000/api"
 
-  [
-    '{{repeat(10)}}',
-    {
-      materia: '{{random("Matemática","Geografía","Programación","Química","Literatura","Historia","Física","Ed. Física","Música","Recreo")}}'
-    }
-  ]
+const seeder=axios.create({
+    baseURL:"http://localhost:3000/api"
+})
 
+//Llamamos a los modelos
+const {Curso,Docente,Alumno}=require("../models/index")
 
-[
+//Construimos 3 arrays con información para hacer un seed a la DB
+const alumnosData=[
     {
       "edad": 20,
       "nombre": "Justice",
@@ -528,10 +538,7 @@
       "apellido": " Cunningham"
     }
   ]
-
-
-
-  [
+const docentesData=[
     {
       "profesion": "Salesman",
       "nombre": "Washington",
@@ -583,8 +590,7 @@
       "apellido": " Campos"
     }
   ]
-
-  [
+const materiasData=[
     {
       "materia": "Ed. Física"
     },
@@ -616,3 +622,26 @@
       "materia": "Historia"
     }
   ]
+
+//Esta función inserta la información en la DB
+const cargar= async()=>{
+  const alumnosIngresados=await Alumno.bulkCreate(alumnosData)
+  const docentesIngresados=await Docente.bulkCreate(docentesData)
+  const materiasIngresadas=await Curso.bulkCreate(materiasData)
+}
+//Ejecutamos la función
+cargar()
+
+//Ahora vamos a vincular los alumnos con los cursos y los docentes con los cursos
+
+// const idAlumnos=[46,75,20,59,33,2,36,91,45,13,55,10,98,5,37,7,42,93,88,23,94,96,82,86,74,43,65,78,8,67,47,51,50,97,19,27,89,73,44,84,9,92,35,32,12,17,76,38,54,71,6,64,49,40,70,85,100,11,68,28,48,99,81,4,24,57,56,77,87,80,15,52,83,26,22,39,62,79,18,31,61,53,25,69,95,3,60,21,14,1,41,29,66,72,90,30,58,63,34,16]
+// const idCursos=[4,1,6,2,5,9,10,3,7,8]
+// const idDocentes=[6,1,3,8,9,4,2,7,10,5]
+
+// const vincularAlumnoCurso=(idAlumno,idCurso,vuelta)=>{
+//   for(let i=vuelta;i<vuelta+10;i++){
+//     seeder.put(`http://localhost:3000/api/alumnos/vincular/${idAlumno}/${idCurso}`)
+//   }
+// }
+
+
